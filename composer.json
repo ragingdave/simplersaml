@@ -1,7 +1,7 @@
 {
     "name": "ragingdave/simplersaml",
     "description": "Allows Simpler integration of SimpleSAML and Laravel.",
-    "keywords": [ "laravel, illuminate, simplesaml, saml" ],
+    "keywords": [ "laravel", "illuminate", "simplesaml", "saml" ],
     "license": "MIT",
     "authors": [
         {
