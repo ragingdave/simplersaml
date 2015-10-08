@@ -14,7 +14,7 @@ Add the package to your composer.json:
 
 Add the service provider in `config/app.php`:
 
-    RagingDave/SimplerSaml/SimplerSamlServiceProvider::class,
+    RagingDave\SimplerSaml\SimplerSamlServiceProvider::class,
     
 (OPTIONALLY) Publish the config to make changes:
     
