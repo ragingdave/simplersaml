@@ -19,6 +19,9 @@ class SimplerSamlServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
+		$config = app()['config'];
+		require_once( $config->get('simplersaml.spPath') .'/lib/_autoload.php');
+		
 		// Handle Config files
 		$this->mergeConfigFrom(
 			__DIR__. '/../../config/simplersaml.php', 'simplersaml'
@@ -27,7 +30,6 @@ class SimplerSamlServiceProvider extends ServiceProvider {
 		// Handle registering the main integration layer
 		$this->app->bind('RagingDave\SimplerSaml\Services\SamlAuth', function() {
 			$config = app()['config'];
-			require_once( $config->get('simplersaml.spPath') .'/lib/_autoload.php');
 			$authSource = $config->get('simplersaml.sp');
 			return new SamlAuth($config, new \SimpleSAML_Auth_Simple($authSource));
 		});
